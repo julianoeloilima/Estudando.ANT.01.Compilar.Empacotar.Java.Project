@@ -1,5 +1,10 @@
 <project name="EstudarAnt">
 
+	
+	<!-- JAVAC: Compilar os fontes
+		srcdir -> Caminho onde estão as classes para compilar
+		destdir -> Caminho onde serão gerados arquivos compilados .class
+	 -->
 	<javac srcdir="src" destdir="bin">
 	
 	</javac>
