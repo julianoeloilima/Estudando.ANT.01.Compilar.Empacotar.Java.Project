@@ -1,0 +1,7 @@
+<project name="EstudarAnt">
+
+	<javac srcdir="src" destdir="bin">
+	
+	</javac>
+	
+</project>
