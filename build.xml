@@ -1,10 +1,13 @@
 <project name="EstudarAnt">
 
+	<!-- Cria um diretório chamado build -->
+	<mkdir dir="build" />
+	
 	<!-- 
 		JAVAC: Tag para compilar os fontes
 			srcdir -> Caminho onde estão as classes para compilar
 			destdir -> Caminho onde serão gerados arquivos compilados .class	 -->
-	<javac srcdir="src" destdir="bin">
+	<javac srcdir="src" destdir="build">
 	
 		<!-- Inclusão de bibliotecas no classpath -->
 		<classpath>
@@ -12,6 +15,7 @@
 			<!-- diretório onde estão as bibliotecas -->
 			<fileset dir="lib">
 
+				
 				<!-- tipos de arquivos a utilizar -->
 				<include name="*.jar" />
 				
