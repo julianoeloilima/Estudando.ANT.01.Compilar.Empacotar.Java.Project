@@ -1,5 +1,9 @@
 <project name="EstudarAnt">
 
+	
+	<!-- Exclui o diretório "build" para geração do pacote -->
+	<delete dir="build"></delete>
+	
 	<!-- Cria um diretório chamado build -->
 	<mkdir dir="build" />
 	
