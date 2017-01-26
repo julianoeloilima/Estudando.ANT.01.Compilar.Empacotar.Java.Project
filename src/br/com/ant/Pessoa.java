@@ -2,7 +2,7 @@ package br.com.ant;
 
 import com.thoughtworks.xstream.XStream;
 
-public class Aluno {
+public class Pessoa {
 
 	private String nome;
 	private int idade;
