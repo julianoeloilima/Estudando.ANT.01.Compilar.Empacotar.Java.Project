@@ -1,19 +1,24 @@
-<project name="EstudarAnt" default="03.empacotar">
+<project name="EstudarAnt" default="04.empacotar">
 
 	<target name="01.limpar">
+		<echo>Limpando diretórios</echo>
 		<!-- Exclui o diretório "build" para geração do pacote -->
 		<delete dir="build"></delete>
-		
+			
+	</target>
+
+	<target name="02.criar.diretorios" depends="01.limpar">
+		<echo>Criando diretórios</echo>
 		<!-- Cria um diretório chamado build -->
 		<mkdir dir="build\classes" />
 	
 		<!-- Cria um diretório chamado target na pasta build -->
 		<mkdir dir="build\target" />
-	
 	</target>
 	
-	<target name="02.compilar" depends="01.limpar">
+	<target name="03.compilar" depends="02.criar.diretorios">
 	
+		<echo>Compilando projeto</echo>
 		
 		<!-- 
 			JAVAC: Tag para compilar os fontes
@@ -38,7 +43,8 @@
 
 	</target>
 
-	<target name="03.empacotar" depends="02.compilar">
+	<target name="04.empacotar" depends="03.compilar">
+		<echo>Gerando pacote</echo>
 	
 		<jar destfile="build\target\jarGerado.jar"></jar>
 	
