@@ -1,31 +1,47 @@
 <project name="EstudarAnt">
 
-	
-	<!-- Exclui o diretório "build" para geração do pacote -->
-	<delete dir="build"></delete>
-	
-	<!-- Cria um diretório chamado build -->
-	<mkdir dir="build" />
-	
-	<!-- 
-		JAVAC: Tag para compilar os fontes
-			srcdir -> Caminho onde estão as classes para compilar
-			destdir -> Caminho onde serão gerados arquivos compilados .class	 -->
-	<javac srcdir="src" destdir="build">
-	
-		<!-- Inclusão de bibliotecas no classpath -->
-		<classpath>
-			
-			<!-- diretório onde estão as bibliotecas -->
-			<fileset dir="lib">
-
-				
-				<!-- tipos de arquivos a utilizar -->
-				<include name="*.jar" />
-				
-			</fileset>
-		</classpath>
+	<target name="01.limpar">
+		<!-- Exclui o diretório "build" para geração do pacote -->
+		<delete dir="build"></delete>
 		
-	</javac>
+		<!-- Cria um diretório chamado build -->
+		<mkdir dir="build\classes" />
+	
+		<!-- Cria um diretório chamado target na pasta build -->
+		<mkdir dir="build\target" />
+	
+	</target>
+	
+	<target name="02.compilar" depends="01.limpar">
+	
+		
+		<!-- 
+			JAVAC: Tag para compilar os fontes
+				srcdir -> Caminho onde estão as classes para compilar
+				destdir -> Caminho onde serão gerados arquivos compilados .class	 -->
+		<javac srcdir="src" destdir="build\classes">
+		
+			<!-- Inclusão de bibliotecas no classpath -->
+			<classpath>
+				
+				<!-- diretório onde estão as bibliotecas -->
+				<fileset dir="lib">
+	
+					
+					<!-- tipos de arquivos a utilizar -->
+					<include name="*.jar" />
+					
+				</fileset>
+			</classpath>
+			
+		</javac>
+
+	</target>
+
+	<target name="03.empacotar" depends="02.compilar">
+	
+		<jar destfile="build\target\jarGerado.jar"></jar>
+	
+	</target>
 	
 </project>
