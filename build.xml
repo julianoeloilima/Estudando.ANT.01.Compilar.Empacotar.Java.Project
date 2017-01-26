@@ -1,4 +1,4 @@
-<project name="EstudarAnt">
+<project name="EstudarAnt" default="03.empacotar">
 
 	<target name="01.limpar">
 		<!-- Exclui o diretório "build" para geração do pacote -->
